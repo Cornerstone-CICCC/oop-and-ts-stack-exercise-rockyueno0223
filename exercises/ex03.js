@@ -7,13 +7,11 @@ const Stack = require('../lib/Stack')
 function removeDuplicates(stack) {
   // your code here
   const tempStack = new Stack()
-  const stackSet = new Set()
 
   while (!stack.isEmpty()) {
     const item = stack.pop();
-    if (!stackSet.has(item)) {
+    if (!tempStack.items.includes(item)) {
       tempStack.push(item)
-      stackSet.add(item)
     }
   }
 
